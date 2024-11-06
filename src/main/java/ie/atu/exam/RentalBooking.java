@@ -3,6 +3,7 @@ package ie.atu.exam;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;
+import jdk.jfr.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,4 +21,6 @@ public class RentalBooking {
     @PositiveOrZero (message = "Please enter an StartDate") private int StartDate;
     @PositiveOrZero (message = "Please enter an EndDate") private int EndDate;
     @PositiveOrZero (message = "Please enter an dailyRate") private int dailyRate;
+    @NotBlank (message = "Rental not created: Error") private String message;
+    @Timestamp private String timeStamp;
 }
